@@ -1,0 +1,11 @@
+# Tells Git which files/folders to never track — it doesn't delete or hide
+# them, it just leaves them out of every commit.
+
+# TODO(you): the folder holding every installed npm package. It's huge,
+# and 100% reproducible from package.json + package-lock.json via
+# `npm install` — add it here.
+node_modules/
+
+# TODO(you): macOS silently creates a hidden junk file in folders you
+# browse in Finder. Look up what it's called and add it here too.
+.DS_Store
