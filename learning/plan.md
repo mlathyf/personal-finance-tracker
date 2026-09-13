@@ -22,9 +22,9 @@ Deliverable: a Git repository initialized in this folder, a `.gitignore` excludi
 Tasks:
 - [x] 1.1 Initialize a Git repository in this folder (`git init`)
 - [x] 1.2 Create a `.gitignore` that excludes `node_modules` (and other junk that shouldn't be tracked)
-- [ ] 1.3 Stage the project files and make the first commit
-- [ ] 1.4 Create a new empty repository on GitHub
-- [ ] 1.5 Connect this local repo to the GitHub remote and push — deliverable: the code visible at a github.com URL
+- [x] 1.3 Stage the project files and make the first commit
+- [x] 1.4 Create a new empty repository on GitHub
+- [x] 1.5 Connect this local repo to the GitHub remote and push — deliverable: the code visible at a github.com URL
 
 **2. Static page renders**
 Deliverable: opening `index.html` directly in the browser shows the app's basic structure — title, an empty area where the expense list will go, and a form (amount, date, category, note). Nothing works yet — just structure.
