@@ -70,4 +70,4 @@ Some free hosting tiers wipe the local filesystem on redeploy, which would silen
 
 ## Status
 
-Not started yet. Next step: project setup (folder structure, `npm init`, installing Express).
+Sections 1–2 done ([[plan]]): Git/GitHub set up, and `public/index.html` written (structure + form, no styling/JS yet). Next: Section 3 (CSS + in-page JS to make the submit button add a row to the list).

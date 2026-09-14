@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Finance Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Personal Finance Tracker</h1>
+    <div id="container"></div>
+    <form action="" id="form">
+      <label for="amount">Amount</label>
+      <input type="number" name="amount" id="amount" />
+      <label for="date">Date</label>
+      <input type="date" name="date" id="date" />
+      <label for="category">Category</label>
+      <select name="category" id="category">
+        <option value="Food">Food</option>
+        <option value="Transport">Transport</option>
+        <option value="Bills">Bills</option>
+        <option value="Other">Other</option>
+      </select>
+      <label for="note">Note</label>
+      <input type="text" name="note" id="note" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

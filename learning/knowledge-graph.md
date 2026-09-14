@@ -21,17 +21,18 @@ Quiz candidates are anything at **seed**, **introduced**, or **practicing** — 
 
 | Concept | Status | Introduced | Last reviewed | Evidence |
 |---|---|---|---|---|
-| Variables & data types (`let`/`const`, strings, numbers, booleans) | seed | — | — | — |
-| Functions (declaring & calling) | seed | — | — | — |
+| Variables & data types (`let`/`const`, strings, numbers, booleans) | practicing | 2026-09-14 | 2026-09-14 | Declared `const` bindings for all form fields; correctly predicted that `.value` on a `type="number"` and `type="date"` input still returns a string, not a number, and confirmed it live. `let` still unexercised, and this is evidence for strings specifically — numbers/booleans as JS values not yet tested directly. |
+| Functions (declaring & calling) | practicing | 2026-09-14 | 2026-09-14 | Wrote an arrow function `(e) => {...}` as an event-listener callback, correctly understanding it runs later rather than immediately. Only the arrow/callback form exercised so far — not yet a named function declaration. |
 | Conditionals (`if`/`else`) | seed | — | — | — |
 | Loops & iteration (`for`, iterating arrays) | seed | — | — | — |
 | Arrays & array methods (`push`, `filter`, `map`, `reduce`) | seed | — | — | — |
 | Objects (key-value structure — e.g. one expense record) | seed | — | — | — |
-| Template literals & string building | seed | — | — | — |
-| DOM selection & manipulation (`querySelector`, creating/updating elements) | seed | — | — | — |
-| Event listeners (responding to clicks/form submits) | seed | — | — | — |
+| Template literals & string building | practicing | 2026-09-14 | 2026-09-14 | Wrote a template literal combining all four field values into one readable line (`` `Spent MVR ${amount.value} on ${note.value}...` ``) correctly on the first attempt. |
+| DOM selection & manipulation (`querySelector`, creating/updating elements) | practicing | 2026-09-14 | 2026-09-14 | Wrote `document.querySelector` calls for every field; independently switched the form's selector to `#form` for the id-safety reason discussed. Used `document.createElement`, `.textContent` (not `innerHTML`, given `note` is free-text), and `container.prepend()` to build and insert a real element from form data. Correctly chose `form.reset()` over manually clearing each field after a trade-off discussion (single call vs. logic that has to be kept in sync by hand), and correctly predicted the `<select>` would revert to its first option ("Food") rather than go blank. |
+| Event listeners (responding to clicks/form submits) | practicing | 2026-09-14 | 2026-09-14 | Wrote `form.addEventListener("submit", (e) => {...})` correctly on the first attempt — passed the callback by reference (didn't fall into the call-it-now-with-parens trap), called `e.preventDefault()`, then correctly predicted and confirmed the page would stay put with a "Submitted" console log. |
 | JSON (`stringify`/`parse`) | seed | — | — | — |
 | Async/await & Promises (needed for `fetch`) | seed | — | — | — |
+| CSS basics (selectors, box model, layout) | practicing | 2026-09-14 | 2026-09-14 | Wrote `public/style.css` from a plain-language spec with help; independently fixed a `san-serif` typo and generalized `#category` to `select`. Also surfaced and corrected a real misconception: predicted `max-width` on `body` would clip/hide overflowing elements like a fixed-size container — corrected by explaining height is unconstrained by default and nothing clips without an explicit `height` + `overflow` rule, which confirmed live (page just scrolled). |
 
 ## Structural (how the pieces fit together)
 
@@ -40,11 +41,14 @@ Quiz candidates are anything at **seed**, **introduced**, or **practicing** — 
 | Frontend roles: HTML/CSS/JS | understood | 2026-09-13 | 2026-09-13 | "The frontend is what the user will see. It consists of HTML, CSS and JS." |
 | Backend/server: Node.js + Express | understood | 2026-09-13 | 2026-09-13 | Explained backend as "the business logic of the project... Node.js with express"; separately justified Express as "popular and simple." |
 | API as the frontend↔backend contract | practicing | 2026-09-13 | 2026-09-13 | Said APIs "communicate between frontend and backend" — correct at a high level, but needed correction that the API is routes inside the backend code, not a separate technology. Not yet re-confirmed. |
-| Client-server request/response cycle (fetch → HTTP → route → response) | seed | — | — | — |
+| Client-server request/response cycle (fetch → HTTP → route → response) | practicing | 2026-09-14 | 2026-09-14 | Closed the loop from the Section 2 observation: correctly predicted that calling `preventDefault()` would stop the default GET-navigation behavior, then confirmed it live (page stayed put, no query string, console logged "Submitted"). |
 | Database: SQLite / relational, tabular data | understood | 2026-09-13 | 2026-09-13 | Justified SQLite as it "requires no separate server to run. I can always migrate to MongoDB or PostgreSQL later if I want." |
+| Writing SQL queries (`CREATE TABLE`/`SELECT`/`INSERT`/`DELETE`) | seed | — | — | — |
+| HTTP methods & REST conventions (GET/POST/DELETE mapping to CRUD) | seed | — | — | — |
+| Express routing & middleware (`app.get`/`post`/`delete`, `express.json()`) | seed | — | — | — |
 | `package.json` & npm dependencies | seed | — | — | Watched `npm init`/`npm install` run, but the concept itself hasn't been explained yet. |
 | Module system (`require`/`module.exports`) | seed | — | — | — |
-| Project folder structure (frontend files vs. backend files) | introduced | 2026-09-13 | 2026-09-13 | Told: "public/ folder created — this is where your frontend HTML/JS will live." |
+| Project folder structure (frontend files vs. backend files) | practicing | 2026-09-13 | 2026-09-14 | Wrote `public/index.html` (structure, form, labels) unaided in the correct location. |
 | Same language end-to-end (JS on both frontend & backend) | understood | 2026-09-13 | 2026-09-13 | "JavaScript is the language of the web... to build my fundamentals. That is why I am using it in the backend as well." |
 
 ## Engineering practice
