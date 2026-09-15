@@ -45,14 +45,14 @@ Tasks:
 - [x] 3.5 Build a new element from those values and insert it into the container
 - [x] 3.6 Clear the form fields after a successful add
 
-**4. A simple local server**
+**4. A simple local server** ✅ done (2026-09-15)
 Deliverable: instead of opening the HTML file directly, you start your own Express server and load the exact same page from `http://localhost:3000` — now served by code you wrote instead of the browser reading a file.
 
 Tasks:
-- [ ] 4.1 Write a minimal Express app in `server.js` that serves the `public/` folder as static files
-- [ ] 4.2 Have the app `listen` on a port (e.g. 3000)
-- [ ] 4.3 Start the server and load `http://localhost:3000` in the browser, confirming it's the same page as Section 2
-- [ ] 4.4 Add a `start` script to `package.json` so the server can be launched with `npm start`
+- [x] 4.1 Write a minimal Express app in `server.js` that serves the `public/` folder as static files
+- [x] 4.2 Have the app `listen` on a port (e.g. 3000)
+- [x] 4.3 Start the server and load `http://localhost:3000` in the browser, confirming it's the same page as Section 2
+- [x] 4.4 Add a `start` script to `package.json` so the server can be launched with `npm start`
 
 **5. APIs**
 Deliverable: the "add expense" form calls a real `POST /api/expenses` endpoint via `fetch()`, and the page loads its list from `GET /api/expenses`. Data lives in a plain array on the server for now — it survives a page refresh, but not yet a server restart.
