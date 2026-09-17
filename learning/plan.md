@@ -54,16 +54,16 @@ Tasks:
 - [x] 4.3 Start the server and load `http://localhost:3000` in the browser, confirming it's the same page as Section 2
 - [x] 4.4 Add a `start` script to `package.json` so the server can be launched with `npm start`
 
-**5. APIs**
+**5. APIs** ✅ done (2026-09-16)
 Deliverable: the "add expense" form calls a real `POST /api/expenses` endpoint via `fetch()`, and the page loads its list from `GET /api/expenses`. Data lives in a plain array on the server for now — it survives a page refresh, but not yet a server restart.
 
 Tasks:
-- [ ] 5.1 Add `express.json()` middleware so the server can parse JSON request bodies
-- [ ] 5.2 Create an in-memory array on the server to hold expenses
-- [ ] 5.3 Implement `GET /api/expenses` returning the array as JSON
-- [ ] 5.4 Implement `POST /api/expenses` that reads the request body and pushes a new expense onto the array
-- [ ] 5.5 Update the frontend JS to `fetch()` the list from `GET /api/expenses` on page load and render it
-- [ ] 5.6 Update the frontend submit handler to `POST` to the API (via `fetch`) instead of only building the row locally
+- [x] 5.1 Add `express.json()` middleware so the server can parse JSON request bodies
+- [x] 5.2 Create an in-memory array on the server to hold expenses
+- [x] 5.3 Implement `GET /api/expenses` returning the array as JSON
+- [x] 5.4 Implement `POST /api/expenses` that reads the request body and pushes a new expense onto the array
+- [x] 5.5 Update the frontend JS to `fetch()` the list from `GET /api/expenses` on page load and render it
+- [x] 5.6 Update the frontend submit handler to `POST` to the API (via `fetch`) instead of only building the row locally
 
 **6. Database**
 Deliverable: swap the in-memory array for SQLite. Add an expense, fully restart the server, refresh the page — the expense is still there.
