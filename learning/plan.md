@@ -65,15 +65,15 @@ Tasks:
 - [x] 5.5 Update the frontend JS to `fetch()` the list from `GET /api/expenses` on page load and render it
 - [x] 5.6 Update the frontend submit handler to `POST` to the API (via `fetch`) instead of only building the row locally
 
-**6. Database**
+**6. Database** ✅ done (2026-09-19)
 Deliverable: swap the in-memory array for SQLite. Add an expense, fully restart the server, refresh the page — the expense is still there.
 
 Tasks:
-- [ ] 6.1 Install a SQLite package and create a database file
-- [ ] 6.2 Create an `expenses` table (id, amount, date, category, note)
-- [ ] 6.3 Replace the `GET /api/expenses` in-memory read with a `SELECT` query
-- [ ] 6.4 Replace the `POST /api/expenses` in-memory write with an `INSERT` query
-- [ ] 6.5 Restart the server and confirm previously added expenses are still there
+- [x] 6.1 Install a SQLite package and create a database file
+- [x] 6.2 Create an `expenses` table (id, amount, date, category, note)
+- [x] 6.3 Replace the `GET /api/expenses` in-memory read with a `SELECT` query
+- [x] 6.4 Replace the `POST /api/expenses` in-memory write with an `INSERT` query — converts `amount` to integer cents (`Math.round(parseFloat(amount) * 100)`), inserts via a parameterized `db.prepare(...).run(...)`, builds the response `id` from `result.lastInsertRowid`, and removed the now-dead `expenses` array / `nextId` counter.
+- [x] 6.5 Restart the server and confirm previously added expenses are still there
 
 **7. Core features (completing the MVP)**
 Deliverable: delete works, a running monthly total displays correctly, and the fixed category list is wired in end to end. The app now does everything on the MVP list ([[project]]), running locally.
@@ -83,6 +83,7 @@ Tasks:
 - [ ] 7.2 Add a delete button per row in the frontend that calls the delete endpoint and removes the row on success
 - [ ] 7.3 Compute and display a running total for the current month
 - [ ] 7.4 Walk through the MVP checklist in `project.md` end to end and confirm every item actually works
+- [ ] 7.5 Format stored cents back into a dollar display in the frontend — surfaced 2026-09-19: since task 6.4, `amount` is stored/returned as integer cents (e.g. `1999`), but `renderExpense` in `script.js` prints that raw number with no conversion, so expenses now render as whole numbers instead of dollar amounts
 
 **8. Tests**
 Deliverable: a small test suite covering your API endpoints, runnable with one command, that passes — and that would visibly fail if you broke something later.

@@ -1,9 +1,18 @@
 const express = require("express");
+const Database = require("better-sqlite3");
 
 const app = express();
+const db = new Database("expenses.db");
 
-const expenses = [];
-let nextId = 1;
+db.exec(`
+  CREATE TABLE IF NOT EXISTS expenses (
+    id INTEGER PRIMARY KEY,
+    amount INTEGER,
+    date TEXT,
+    category TEXT,
+    note TEXT
+  )
+  `);
 
 // middleware
 app.use(express.static("public"));
@@ -11,20 +20,24 @@ app.use(express.json()); // to parse JSON request bodies
 
 // routes
 app.get("/api/expenses", (req, res) => {
-  res.json(expenses);
+  res.json(db.prepare("SELECT * FROM expenses").all());
 });
 app.post("/api/expenses", (req, res) => {
   const { amount, date, category, note } = req.body;
   console.log(amount, date, category, note);
+  const amountCents = Math.round(parseFloat(amount) * 100);
+  const result = db
+    .prepare(
+      `INSERT INTO expenses (amount, date, category, note) VALUES (?, ?, ?, ?)`,
+    )
+    .run(amountCents, date, category, note);
   const expense = {
-    id: nextId,
-    amount: amount,
+    id: result.lastInsertRowid,
+    amount: amountCents,
     date: date,
     category: category,
     note: note,
   };
-  nextId++;
-  expenses.push(expense);
   res.status(201).json(expense);
 });
 
